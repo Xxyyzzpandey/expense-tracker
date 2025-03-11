@@ -30,7 +30,7 @@ export default function TransactionList() {
       await axios.delete(`/api/transdeledit?id=${id}`, {
         headers: { Authorization: `Bearer ${accessCode}` },
       });
-    // @ts-expect-error
+    // @ts-expect-error:error due to error
       setTransactions((prev) => prev.filter((t) => t._id !== id));
      // eslint-disable-next-line @typescript-eslint/no-unused-vars
     } catch (err) {

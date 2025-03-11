@@ -111,7 +111,7 @@ export default function Dashboard() {
         <h2 className="text-lg font-semibold">Recent Transactions</h2>
         {trans?.length > 0 ? (
           <ul>
-            {/* // @ts-expect-error */}
+            {/* // @ts-expect-error :error due to error*/}
             {trans?.map((txn) => (
               <li key={txn._id} className="border-b py-2">
                 {txn.category} - ₹{txn.amount}
