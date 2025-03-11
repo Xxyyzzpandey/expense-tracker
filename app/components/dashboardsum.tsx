@@ -46,6 +46,11 @@ export default function Dashboard() {
         const res=await axios.get("/api/transations",{
           headers: { Authorization: `Bearer ${accessCode}` },
         });
+        if(res.data===null){
+          return<>
+           <h3>no record found</h3>
+          </>
+        }
         settrans(res.data);
       }catch(err){
       console.log("error fetching transations")
@@ -102,7 +107,7 @@ export default function Dashboard() {
       {/* Recent Transactions */}
       <div className="bg-white p-4 rounded-lg shadow">
         <h2 className="text-lg font-semibold">Recent Transactions</h2>
-        {trans.length > 0 ? (
+        {trans?.length > 0 ? (
           <ul>
             {/* @ts-ignore */}
             {trans?.map((txn) => (
