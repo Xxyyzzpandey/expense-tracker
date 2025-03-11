@@ -30,8 +30,9 @@ export default function TransactionList() {
       await axios.delete(`/api/transdeledit?id=${id}`, {
         headers: { Authorization: `Bearer ${accessCode}` },
       });
-    // @ts-ignore
+    // @ts-expect-error
       setTransactions((prev) => prev.filter((t) => t._id !== id));
+     // eslint-disable-next-line @typescript-eslint/no-unused-vars
     } catch (err) {
       setError("Failed to delete transaction.");
     }
@@ -39,7 +40,7 @@ export default function TransactionList() {
    
   interface List{
     _id:string,
-    description:String,
+    description:string,
     amount:number,
     date:Date,
     category:string,

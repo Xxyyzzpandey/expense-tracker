@@ -15,6 +15,7 @@ interface SummaryData {
 
 export default function Dashboard() {
   const [summary, setSummary] = useState<SummaryData | null>(null);
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   const [trans,settrans]=useState<any>(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
@@ -52,6 +53,7 @@ export default function Dashboard() {
           </>
         }
         settrans(res.data);
+        // eslint-disable-next-line @typescript-eslint/no-unused-vars
       }catch(err){
       console.log("error fetching transations")
       setError("Failed to fecth transations history");
@@ -109,7 +111,7 @@ export default function Dashboard() {
         <h2 className="text-lg font-semibold">Recent Transactions</h2>
         {trans?.length > 0 ? (
           <ul>
-            {/* @ts-ignore */}
+            {/* // @ts-expect-error */}
             {trans?.map((txn) => (
               <li key={txn._id} className="border-b py-2">
                 {txn.category} - ₹{txn.amount}

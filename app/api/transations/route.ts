@@ -16,6 +16,7 @@ import { NextRequest, NextResponse } from "next/server";
       await newTransaction.save();
       console.log("it is not printing ");
       return NextResponse.json(newTransaction, { status: 201 });
+      // eslint-disable-next-line @typescript-eslint/no-unused-vars
     } catch (error) {
       return NextResponse.json({ error: "Failed to add transaction" },{status:500});
     }
