@@ -21,6 +21,7 @@ export default async function handler(req: NextRequest) {
     const recentTransactions = transactions.slice(0, 5);
 
     return NextResponse.json({ totalExpenses, categoryBreakdown, recentTransactions },{status:200});
+    // eslint-disable-next-line @typescript-eslint/no-unused-vars
   } catch (error) {
     return NextResponse.json({ error: "Failed to fetch summary" },{status:500});
   }

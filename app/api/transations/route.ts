@@ -37,8 +37,9 @@ import { NextRequest, NextResponse } from "next/server";
       const transactions = await Transaction.find({ accessCode }).sort({ date: -1 });
   
       return NextResponse.json(transactions, { status: 200 });
+      // eslint-disable-next-line @typescript-eslint/no-unused-vars
     } catch (error) {
-      console.error("Error fetching transactions:", error);
+      //console.error("Error fetching transactions:", error);
       return NextResponse.json({ error: "Failed to get transactions" }, { status: 500 });
     }
   }

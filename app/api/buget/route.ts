@@ -16,8 +16,9 @@ export async function POST(req: NextRequest) {
     await budget.save();
 
     return NextResponse.json({ message: "Budget set successfully" }, { status: 201 });
+    // eslint-disable-next-line @typescript-eslint/no-unused-vars
   } catch (error) {
-    console.error("Error setting budget:", error);
+   // console.error("Error setting budget:", error);
     return NextResponse.json({ error: "Failed to set budget" }, { status: 500 });
   }
 }
@@ -47,8 +48,9 @@ export async function GET(req: NextRequest) {
     }));
     
     return NextResponse.json(formattedBudgets, { status: 200 });
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   } catch (error) {
-    console.error("Error fetching budgets:", error);
+    //console.error("Error fetching budgets:", error);
     return NextResponse.json({ error: "Failed to fetch budgets" }, { status: 500 });
   }
 }

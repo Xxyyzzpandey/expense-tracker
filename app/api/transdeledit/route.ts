@@ -18,8 +18,9 @@ async function handler(req: NextRequest) {
 
       const updatedTransaction = await Transaction.findByIdAndUpdate(id, updateData, { new: true });
       return NextResponse.json(updatedTransaction, { status: 200 });
+      // eslint-disable-next-line @typescript-eslint/no-unused-vars
     } catch (error) {
-      console.error("Error updating transaction:", error);
+      //console.error("Error updating transaction:", error);
       return NextResponse.json({ error: "Failed to update transaction" }, { status: 500 });
     }
   }
@@ -46,8 +47,9 @@ async function handler(req: NextRequest) {
       await Transaction.findByIdAndDelete(id);
 
       return NextResponse.json({ message: "Transaction deleted successfully" }, { status: 200 });
+      // eslint-disable-next-line @typescript-eslint/no-unused-vars
     } catch (error) {
-      console.error("Error deleting transaction:", error);
+      //console.error("Error deleting transaction:", error);
       return NextResponse.json({ error: "Failed to delete transaction" }, { status: 500 });
     }
   }
