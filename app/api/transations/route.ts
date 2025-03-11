@@ -23,17 +23,23 @@ import { NextRequest, NextResponse } from "next/server";
 
   if (req.method === "GET") {
     try {
-        const authHeader = req.headers.get("Authorization");
-        const accessCode = authHeader?.split("Bearer ")[1];
-
-      if (!accessCode || typeof accessCode !== "string") {
-        return NextResponse.json({ error: "Access code is required" },{status:400});
+      const authHeader = req.headers.get("Authorization");
+      if (!authHeader || !authHeader.startsWith("Bearer ")) {
+        return NextResponse.json({ error: "Authorization header missing or invalid" }, { status: 400 });
       }
-
+  
+      const accessCode = authHeader.split("Bearer ")[1]?.trim();
+  
+      if (!accessCode) {
+        return NextResponse.json({ error: "Access code is required" }, { status: 400 });
+      }
+  
       const transactions = await Transaction.find({ accessCode }).sort({ date: -1 });
-      return NextResponse.json(transactions,{status:201});
+  
+      return NextResponse.json(transactions, { status: 200 });
     } catch (error) {
-        return NextResponse.json({ error: "Failed to get transaction" },{status:500});
+      console.error("Error fetching transactions:", error);
+      return NextResponse.json({ error: "Failed to get transactions" }, { status: 500 });
     }
   }
 

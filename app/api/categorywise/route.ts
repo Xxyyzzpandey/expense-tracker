@@ -20,8 +20,10 @@ export default async function handler(req: NextRequest, res: NextResponse) {
 
     const recentTransactions = transactions.slice(0, 5);
 
-    NextResponse.json({ totalExpenses, categoryBreakdown, recentTransactions },{status:200});
+    return NextResponse.json({ totalExpenses, categoryBreakdown, recentTransactions },{status:200});
   } catch (error) {
     return NextResponse.json({ error: "Failed to fetch summary" },{status:500});
   }
 }
+
+export {handler as POST}
