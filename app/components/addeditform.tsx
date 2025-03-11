@@ -112,14 +112,20 @@ export default function TransactionForm({ onTransactionAdded }: { onTransactionA
           required
           className="w-full p-2 border rounded"
         />
-        <input
-          type="text"
-          placeholder="Category"
-          value={transaction.category}
-          onChange={(e) => setTransaction({ ...transaction, category: e.target.value })}
-          required
-          className="w-full p-2 border rounded"
-        />
+        <select
+        value={transaction.category}
+        onChange={(e) => setTransaction({ ...transaction, category: e.target.value })}
+        required
+        className="border p-2 rounded w-full"
+      >
+        <option value="">Select Category</option>
+        <option value="Food">Food</option>
+        <option value="Rent">Rent</option>
+        <option value="Entertainment">Entertainment</option>
+        <option value="Shopping">Shopping</option>
+        <option value="Bills">Bills</option>
+        <option value="Other">Other</option>
+      </select>
         <input
           type="date"
           value={transaction.date}

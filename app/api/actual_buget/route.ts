@@ -4,7 +4,7 @@ import {Transaction} from "../../db/model";
 import {Budget} from "../../db/model";
 import { NextRequest, NextResponse } from "next/server";
 
- async function handler(req: NextRequest, res: NextResponse) {
+ async function handler(req: NextRequest) {
   await connectDB();
   
   const { accessCode, month } = await req.json();

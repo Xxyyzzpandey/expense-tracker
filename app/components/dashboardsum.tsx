@@ -105,7 +105,7 @@ export default function Dashboard() {
         {trans.length > 0 ? (
           <ul>
             {/* @ts-ignore */}
-            {trans.map((txn) => (
+            {trans?.map((txn) => (
               <li key={txn._id} className="border-b py-2">
                 {txn.category} - ₹{txn.amount}
               </li>

@@ -15,7 +15,7 @@ export default function Dashboard() {
   return (<>
     <Navbar/>
     <div className="p-4 space-y-4">
-      <h1 className="text-2xl font-bold">Personal Finance Tracker</h1>
+      
       <TransactionForm onTransactionAdded={() => setRefresh((prev) => !prev)} />
       {/* @ts-ignore */}
       <TransactionList refresh={refresh} />

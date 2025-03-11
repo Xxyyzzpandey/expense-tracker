@@ -13,15 +13,14 @@ export default function Navbar() {
           
           {/* Logo */}
           <div className="text-2xl font-bold text-blue-600 dark:text-white">
-            <Link href="/">MyApp</Link>
+            <Link href="/">Personal Finance Tracker</Link>
           </div>
 
           {/* Desktop Menu */}
           <div className="hidden md:flex space-x-6">
-            <NavLink href="/">Home</NavLink>
-            <NavLink href="/about">About</NavLink>
-            <NavLink href="/services">Services</NavLink>
-            <NavLink href="/contact">Contact</NavLink>
+            <NavLink href="/pages/mainpage">Home</NavLink>
+            <NavLink href="/pages/budgetform">Budget</NavLink>
+            <NavLink href="/pages/dashboard">Dashboard</NavLink>
           </div>
 
           {/* Mobile Menu Button */}

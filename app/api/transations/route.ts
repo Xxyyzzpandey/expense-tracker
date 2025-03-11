@@ -2,7 +2,7 @@ import connectDB from "../../db/dbconnect";
 import {Transaction} from "../../db/model";
 import { NextRequest, NextResponse } from "next/server";
 
- async function handler(req: NextRequest, res: NextResponse) {
+ async function handler(req: NextRequest) {
   await connectDB();
 
   if (req.method === "POST") {
