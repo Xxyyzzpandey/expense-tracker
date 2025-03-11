@@ -2,7 +2,7 @@ import connectDB from "../../db/dbconnect";
 import {Transaction} from "../../db/model";
 import { NextRequest, NextResponse } from "next/server";
 
-export default async function handler(req: NextRequest) {
+ async function handler(req: NextRequest) {
   await connectDB();
 
   const { accessCode } = await req.json();
