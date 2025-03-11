@@ -12,7 +12,11 @@ interface SummaryData {
   categoryBreakdown: Record<string, number>;
   recentTransactions: { _id: string; description: string; amount: number }[];
 }
-
+interface txntype{
+  _id:string,
+  amount:number,
+  category:string,
+}
 export default function Dashboard() {
   const [summary, setSummary] = useState<SummaryData | null>(null);
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
@@ -112,7 +116,7 @@ export default function Dashboard() {
         {trans?.length > 0 ? (
           <ul>
             {/* // @ts-expect-error :error due to error*/}
-            {trans?.map((txn) => (
+            {trans?.map((txn:txntype) => (
               <li key={txn._id} className="border-b py-2">
                 {txn.category} - ₹{txn.amount}
               </li>
