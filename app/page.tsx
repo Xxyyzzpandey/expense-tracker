@@ -19,9 +19,9 @@ export default function Home() {
             <div className="p-4 space-y-4">
               
               <TransactionForm onTransactionAdded={() => setRefresh((prev) => !prev)} />
-              {/* // @ts-expect-error:error due to error */}
-              <TransactionList refresh={refresh} />
-              {/* // @ts-expect-error :error due to error*/}
+              {/* @ts-ignore */}
+              <TransactionList refresh={refresh as any} />
+              {/* @ts-ignore */}
               <MonthlyExpensesChart refresh={refresh} />
             </div>
         </>
