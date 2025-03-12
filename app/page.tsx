@@ -11,6 +11,7 @@ const MonthlyExpensesChart = dynamic(() => import("./components/monthlychart"), 
 
 export default function Home() {
 
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   const [refresh, setRefresh] = useState(false);
 
   return (
