@@ -18,7 +18,7 @@ export default function Navbar() {
 
           {/* Desktop Menu */}
           <div className="hidden md:flex space-x-6">
-            <NavLink href="/pages/mainpage">Home</NavLink>
+            <NavLink href="/">Home</NavLink>
             <NavLink href="/pages/budgetform">Budget</NavLink>
             <NavLink href="/pages/dashboard">Dashboard</NavLink>
           </div>
