@@ -41,10 +41,9 @@ export default function Navbar() {
       {isOpen && (
         <div className="md:hidden bg-white dark:bg-gray-800">
           <div className="px-4 py-2 space-y-2">
-            <NavLink href="/" onClick={() => setIsOpen(false)}>Home</NavLink>
-            <NavLink href="/about" onClick={() => setIsOpen(false)}>About</NavLink>
-            <NavLink href="/services" onClick={() => setIsOpen(false)}>Services</NavLink>
-            <NavLink href="/contact" onClick={() => setIsOpen(false)}>Contact</NavLink>
+          <NavLink href="/">Home</NavLink>
+            <NavLink href="/pages/budgetform">Budget</NavLink>
+            <NavLink href="/pages/dashboard">Dashboard</NavLink>
           </div>
         </div>
       )}
