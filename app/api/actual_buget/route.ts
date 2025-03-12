@@ -32,7 +32,7 @@ import { NextRequest, NextResponse } from "next/server";
     NextResponse.json(budgetComparison,{status:200});
   // eslint-disable-next-line @typescript-eslint/no-unused-vars
   } catch (error) {
-    NextResponse.json({ error: "Failed to fetch data" },{status:500});
+    return NextResponse.json({ error: "Failed to fetch data" },{status:500});
   }
 }
 

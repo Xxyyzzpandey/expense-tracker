@@ -19,10 +19,8 @@ export default function Home() {
             <div className="p-4 space-y-4">
               
               <TransactionForm onTransactionAdded={() => setRefresh((prev) => !prev)} />
-              {/* @ts-ignore */}
-              <TransactionList refresh={refresh as any} />
-              {/* @ts-ignore */}
-              <MonthlyExpensesChart refresh={refresh} />
+              <TransactionList/>
+              <MonthlyExpensesChart  />
             </div>
         </>
   );
